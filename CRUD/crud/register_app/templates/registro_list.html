@@ -1,0 +1,14 @@
+<h1>Lista de Registros</h1>
+
+<a href="{% url 'registro-create' %}">Crear Registro</a>
+
+<ul>
+    {% for registro in registros %}
+    <li>
+        {{ registro.numerico1 }}, {{ registro.numerico2 }}, {{ registro.numerico3 }},
+        {{ registro.texto1 }}, {{ registro.texto2 }}, {{ registro.fecha }}
+        <a href="{% url 'registro-update' registro.pk %}">Editar</a>
+        <a href="{% url 'registro-delete' registro.pk %}">Eliminar</a>
+    </li>
+    {% endfor %}
+</ul>
